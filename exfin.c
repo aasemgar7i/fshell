@@ -1,6 +1,10 @@
 #include "shell.h"
 
-extern char **environ;
+/**
+ * exefin - execute the command
+ * @av: argument
+ * @envp: environment variable
+ */
 
 void exefin(char **av, char **envp)
 {

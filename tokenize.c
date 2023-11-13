@@ -1,6 +1,12 @@
 #include "shell.h"
 
-void tokinput(char *input, char *cmds[][10], int *num_cmds)
+/**
+ * tokinput - tokenize the input
+ * @input: input to toknize
+ * @cmds: commands
+ */
+
+void tokinput(char *input, char *cmds[][10])
 {
 	char *token = strtok(input, " ");
 	int count = 0;

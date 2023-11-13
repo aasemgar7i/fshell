@@ -32,5 +32,5 @@ char **spliter(const char *input)
 		args = realloc(args, (i + 1) * sizeof(char *));
 	}
 	args[i] = NULL;
-	return args;
+	return (args);
 }

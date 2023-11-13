@@ -1,12 +1,22 @@
 #include "shell.h"
 
+/**
+ * main - main of the simple shell project
+ * @ac: nmber of args
+ * @av: args
+ * @envp: environment path
+ * Return: always 0
+ */
+
 int main(int ac, char **av, char **envp)
 {
-	envp = allpaths();
-	char *input = NULL;
+	int i;
 	size_t len = 0;
-	char **args = NULL;
+	char *input = NULL, **args = NULL;
 
+	(void) ac;
+	(void) **av;
+	envp = allpaths();
 	while (1)
 	{
 		printf("#OURSHELL$ ");
@@ -16,7 +26,7 @@ int main(int ac, char **av, char **envp)
 			break;
 		}
 		input[strcspn(input, "\n")] = '\0';
-		if (input[0] == '\0' || input[0] == '\n' && input[1] == '\0')
+		if (input[0] == '\0' || (input[0] == '\n' && input[1] == '\0'))
 			continue;
 		if (strcmp(input, "exit") == 0)
 		{
@@ -32,13 +42,13 @@ int main(int ac, char **av, char **envp)
 		args = spliter(input);
 		exefin(args, envp);
 
-		for (int i = 0; args[i] != NULL; i++)
-        	{
-            		free(args[i]);
+		for (i = 0; args[i] != NULL; i++)
+		{
+			free(args[i]);
 		}
 		free(args);
 	}
 	free(input);
 	free(envp);
-	return 0;
+	return (0);
 }

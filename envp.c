@@ -1,6 +1,11 @@
 #include "shell.h"
 
-char** allpaths()
+/**
+ * allpaths - get path
+ * Return: all the path
+ */
+
+char **allpaths(void)
 {
 	char *path = getenv("PATH");
 	char *pathd = strdup(path);
@@ -9,7 +14,7 @@ char** allpaths()
 	int i = 0;
 
 	envp = malloc(sizeof(char *));
-	while(token)
+	while (token)
 	{
 		envp[i] = malloc(strlen(token) + 2);
 		sprintf(envp[i], "PATH=%s", token);
@@ -21,5 +26,5 @@ char** allpaths()
 			}
 	}
 	envp[i] = NULL;
-	return envp;
+	return (envp);
 }
