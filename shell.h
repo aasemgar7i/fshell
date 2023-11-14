@@ -29,6 +29,6 @@ char *_strdup(char *str);
 char *_strstr(char *hystack, char *needle);
 char *_getenv(char *var_name);
 char *getcmd(char *cmd);
-char** allpaths();
+char **allpaths();
 
 #endif
