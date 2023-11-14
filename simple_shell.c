@@ -35,13 +35,10 @@ int main(int ac, char **av, char **envp)
 			exit(EXIT_SUCCESS);
 		}
 		if (strcmp(input, "env") == 0)
-		{
 			print_env();
-		}
 
 		args = spliter(input);
 		exefin(args, envp);
-
 		for (i = 0; args[i] != NULL; i++)
 		{
 			free(args[i]);
