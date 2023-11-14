@@ -8,7 +8,7 @@ the goal in this project was to make us understan how a hell works. to single ou
 ## __Usage__
 In order to use this program:
 
-* Clone it: `git clone https://github.com/aasemgar7i/Xionshell.git`
+* Clone it: `git clone https://github.com/aasemgar7i/simple_shell.git`
 * Compile it: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 ## __Learning Objectives__
 
