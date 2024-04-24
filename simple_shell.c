@@ -1,5 +1,7 @@
 #include "shell.h"
 
+#define SHELL_PROMPT "#OURSHELL$ "
+
 /**
  * main - main of the simple shell project
  * @ac: nmber of args
@@ -13,13 +15,17 @@ int main(int ac, char **av, char **envp)
 	int i;
 	size_t len = 0;
 	char *input = NULL, **args = NULL;
+	int is_terminal = isatty(fileno(stdin));
 
 	(void) ac;
 	(void) **av;
 	envp = allpaths();
 	while (1)
 	{
-		printf("#OURSHELL$ ");
+		if (is_terminal)
+		{
+			printf(SHELL_PROMPT);
+		}
 		if (getline(&input, &len, stdin) == -1)
 		{
 			printf("\n");
