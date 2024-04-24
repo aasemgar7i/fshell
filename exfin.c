@@ -24,8 +24,10 @@ void exefin(char **av, char **envp)
 			perror("execve");
 			exit(EXIT_FAILURE);
 		}
+		free(cmdfp);
 	} else
 	{
 		waitpid(pi, &status, 0);
+		free(cmdfp);
 	}
 }

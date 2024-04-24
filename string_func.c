@@ -73,6 +73,22 @@ int _strlen(char *str)
 char *_strdup(char *str)
 {
 	char *p;
+	size_t size;
+
+
+	if (str == NULL)
+		return NULL;
+
+	size = strlen(str) + 1;
+	p = malloc(size);
+
+	if (p == NULL)
+		return NULL;
+
+	strcpy(p, str);
+
+	return p;
+/**	char *p;
 	int i, size;
 
 	if (str == 0)
@@ -88,5 +104,5 @@ char *_strdup(char *str)
 		p[i] = str[i];
 	}
 	p[size] = '\0';
-	return (p);
+	return (p); */
 }
