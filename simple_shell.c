@@ -28,7 +28,8 @@ int main(int ac, char **av, char **envp)
 		}
 		if (getline(&input, &len, stdin) == -1)
 		{
-			printf("\n");
+			if (is_terminal)
+				printf("\n");
 			break;
 		}
 		input[strcspn(input, "\n")] = '\0';
